@@ -34,3 +34,34 @@ todo-app/
     └── API.md               # 간단한 API 명세 (선택이지만 강력 추천)
 
 ```
+개발 모드에서 실행 방법
+1. 백엔드 서버 실행
+프로젝트 루트 기준:
+
+bash
+python backend/app.py
+기본 포트: 5000
+
+헬스 체크: 브라우저에서 http://localhost:5000/api/health 접속 시 {"status": "ok"} 응답 확인
+
+2. 프론트엔드 개발 서버 실행
+bash
+cd frontend
+npm install      # 최초 1회만 실행
+npm run dev
+기본 포트: 5173
+
+3. 브라우저에서 접속
+브라우저에서 다음 주소로 접속한다.
+
+text
+http://localhost:5173
+정상 동작 시:
+
+할 일 추가
+
+할 일 완료/미완료 토글
+
+할 일 삭제
+
+기능이 모두 동작하면 프론트엔드와 백엔드 연동이 성공적으로 이루어진 것이다
