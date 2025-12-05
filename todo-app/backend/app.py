@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
 
+from config import get_database_uri
+
 # -------------------------------------------------
 # Flask 앱 및 기본 설정
 # -------------------------------------------------
