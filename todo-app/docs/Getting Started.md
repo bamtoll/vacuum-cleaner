@@ -1,14 +1,15 @@
-# 임시로 작성해놓은 것
+# 실행 방법
+
 1. MySQL 준비
 1-1. MySQL 서버 켜기
 로컬에 MySQL이 설치되어 있어야 한다.
 
 실행 여부 확인:
 ``` bash
-bash
 mysql -u root -p
-비밀번호 입력 후 접속이 되면 OK.
 ```
+비밀번호 입력 후 접속이 되면 OK.
+
 1-2. DB/유저/테이블 만들기 (db/init.sql 사용)
 프로젝트 루트에서 init.sql 내용을 MySQL 콘솔에 붙여 넣거나, 파일로 실행한다.
 
@@ -39,24 +40,27 @@ CREATE TABLE IF NOT EXISTS todos (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 2. 백엔드 실행 (Flask)
 2-1. 가상환경(선택, 있으면 좋음)
-bash
+
+``` bash
 cd todo-app/backend
-
+```
 # venv 생성 (한 번만)
+```
 python -m venv venv
-
+```
 # 활성화 (Windows)
+```
 venv\Scripts\activate
-
+```
 # 활성화 (macOS/Linux)
 source venv/bin/activate
 2-2. 패키지 설치
-bash
+``` bash
 cd todo-app/backend
 pip install -r requirements.txt
 2-3. .env 파일 만들기
 todo-app/backend/.env 파일 생성 → 아래 내용 넣기:
-
+``` 
 text
 DB_USER=todo_user
 DB_PASSWORD=todo_password
