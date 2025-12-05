@@ -15,7 +15,8 @@ todo-app/
 ├── backend/                 # Flask + MySQL
 │   ├── app.py               # Flask 엔트리 포인트 + 모든 API
 │   ├── requirements.txt     # 백엔드 패키지 목록
-│   └── config.py            # DB 연결 설정 (MySQL)
+│   ├── config.py            # DB 연결 설정 (MySQL)
+│   └── .env
 ├── frontend/                # React
 │   ├── package.json
 │   ├── public/
