@@ -1,29 +1,41 @@
 ```markdown
-#  소스코드 라이선스 헤더(Header) 적용 가이드
+# 🛡️ 소스코드 라이선스 헤더(Header) 적용 가이드
 
-이 문서는 개발자가 새로운 소스코드 파일을 생성할 때, 파일 최상단에 포함해야 하는 **라이선스 고지문(License Header)**의 표준 양식을 제공합니다.
-
-> ** 왜 헤더를 붙여야 하나요?**
+> **이 문서는 개발자를 위한 실무 가이드입니다.**
 >
-> `LICENSE` 파일이 프로젝트 루트에 있어도, 코드가 개별 파일 단위로 복사되어 인터넷에 돌아다닐 수 있습니다.
-> 파일 내부에 헤더가 없으면 저작권 보호를 받기 어렵거나, 제3자가 무단으로 도용할 위험이 커집니다.
+> 새로운 소스코드 파일을 생성할 때, 파일 최상단에 포함해야 하는 **라이선스 고지문(License Header)**의 표준 양식을 제공합니다. 이를 통해 코드의 법적 보호를 강화하고 오픈소스 컴플라이언스를 준수할 수 있습니다.
 
 ---
 
-## 1.  작성 원칙 (Common Rules)
-1. **위치:** 반드시 파일의 **가장 첫 줄**(Shebang `#!/bin/bash` 등이 있다면 그 바로 아래)에 위치해야 합니다.
-2. **수정 금지:** 오픈소스 코드를 가져왔을 때, 원작자의 헤더를 **절대로 삭제하면 안 됩니다.**
-3. **추가 작성:** 원본 코드를 수정했다면, 원작자 헤더 아래에 `Modified by [Your Name]` 형태의 주석을 추가합니다.
-4. **Placeholder:** 아래 예시에서 `[yyyy]`, `[name of copyright owner]` 부분은 본인의 정보로 변경해서 사용하세요.
+## ❓ 왜 파일마다 헤더를 붙여야 하나요?
+
+`LICENSE` 파일이 프로젝트 루트(Root)에 있어도, **코드가 개별 파일 단위로 복사되어 배포**될 경우 법적 보호를 받기 어렵습니다.
+
+1.  **저작권 보호:** 파일 자체가 독립적으로 배포되더라도 저작권자가 누구인지 명확히 알립니다.
+2.  **무단 도용 방지:** 제3자가 코드를 사용할 때 준수해야 할 의무를 즉시 확인할 수 있습니다.
+3.  **컴플라이언스:** 많은 오픈소스 라이선스(Apache, GPL 등)는 파일 내 고지를 권장하거나 의무화합니다.
 
 ---
 
-## 2. 라이선스별 / 언어별 템플릿 (Copy & Paste)
+## 1. 📌 작성 원칙 (Common Rules)
 
-### Type A: MIT License (가장 많이 사용)
-짧고 간결합니다. Python, Node.js 프로젝트에서 주로 쓰입니다.
+반드시 아래 규칙을 준수하여 헤더를 작성하세요.
 
-#### [Python / Ruby / Shell]
+*   **위치 준수:** 파일의 **가장 첫 줄**에 위치해야 합니다. (단, `#!/bin/bash` 같은 Shebang이 있다면 그 바로 아래)
+*   **삭제 금지:** 외부 오픈소스 코드를 가져왔을 때, **원작자의 헤더를 절대로 삭제하지 마십시오.**
+*   **수정 이력:** 원본 코드를 수정했다면, 원작자 헤더 아래에 `Modified by [Your Name]` 형태의 주석을 추가합니다.
+*   **치환(Placeholder):** 아래 템플릿의 `[yyyy]`(연도)와 `[name of copyright owner]`(이름/회사명)를 본인의 정보로 변경하세요.
+
+---
+
+## 2. 📝 라이선스별 템플릿 (Copy & Paste)
+
+가장 널리 사용되는 3가지 라이선스(MIT, Apache, GPL)의 표준 헤더입니다.
+
+### 🔹 Type A: MIT License
+> **특징:** 가장 짧고 간결하며, 제약이 적습니다. (Python, Node.js 생태계 표준)
+
+#### 🐍 Python / Ruby / Shell
 ```
 # Copyright (c) [yyyy] [name of copyright owner]
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,10 +46,16 @@
 # furnished to do so, subject to the following conditions:
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND...
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 ```
 
-#### [JavaScript / TypeScript / C / C++ / Java / Swift]
+#### ☕ JavaScript / C / Java / Swift
 ```
 /*
  * Copyright (c) [yyyy] [name of copyright owner]
@@ -51,15 +69,17 @@
  *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND... (이하 생략 가능하나 전체 권장)
  */
 ```
 
 ---
 
-### Type B: Apache License 2.0 (기업용/안드로이드)
-Google, Spring, Hadoop 등 대형 프로젝트 표준입니다. 특허 조항이 포함되어 있습니다.
+### 🔹 Type B: Apache License 2.0
+> **특징:** 특허 조항이 포함되어 기업용 프로젝트 및 Android 생태계에서 선호합니다.
 
-#### [Java / C / C++ / Kotlin]
+#### ☕ Java / C / Kotlin
 ```
 /*
  * Copyright [yyyy] [name of copyright owner]
@@ -78,7 +98,7 @@ Google, Spring, Hadoop 등 대형 프로젝트 표준입니다. 특허 조항이
  */
 ```
 
-#### [XML / HTML]
+#### 🌐 XML / HTML
 ```
 <!--
   Copyright [yyyy] [name of copyright owner]
@@ -99,10 +119,10 @@ Google, Spring, Hadoop 등 대형 프로젝트 표준입니다. 특허 조항이
 
 ---
 
-### Type C: GNU GPL v3 (강력한 소스 공개 의무)
-가장 엄격합니다. 사용자가 이 코드를 봤을 때 "아, 이건 함부로 쓰면 안 되겠구나"라고 바로 알 수 있게 해야 합니다.
+### 🔹 Type C: GNU GPL v3
+> **특징:** 가장 강력한 **Copyleft(전염성)**를 가집니다. 소스 공개 의무를 강력히 경고합니다.
 
-#### [C / C++ / General]
+#### 🖥️ C / C++ / General
 ```
 /*
  * This file is part of [Program Name].
@@ -126,22 +146,27 @@ Google, Spring, Hadoop 등 대형 프로젝트 표준입니다. 특허 조항이
 
 ---
 
-## 3. 최신 트렌드: SPDX 식별자 (Short Form)
-최근 리눅스 커널(Linux Kernel) 등에서는 긴 헤더 대신 **SPDX ID** 한 줄만 적어서 파일 용량을 줄이고 가독성을 높이기도 합니다.
+## 3. 🚀 최신 트렌드: SPDX 식별자 (Short Form)
 
-**사용법:** 파일 첫 줄에 아래와 같이 주석으로 명시
+최근 Linux Kernel 등 대형 프로젝트에서는 파일 용량 절약과 자동화 도구의 인식을 돕기 위해 **SPDX ID**를 사용합니다.
 
+*   **장점:** 코드가 깔끔해지고 가독성이 좋아집니다.
+*   **주의:** 반드시 프로젝트 루트에 전체 텍스트가 담긴 `LICENSE` 파일이 존재해야 유효합니다.
+
+#### 사용 예시
+
+**Python / Shell**
 ```
 # SPDX-License-Identifier: MIT
 ```
 
+**Java / C / JS**
 ```
 // SPDX-License-Identifier: Apache-2.0
 ```
 
+**C (Block Comment)**
 ```
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 ```
-
-> **Note:** SPDX 방식을 사용하더라도 프로젝트 최상위 루트에는 반드시 전체 텍스트가 담긴 `LICENSE` 파일이 존재해야 합니다.
 ```
