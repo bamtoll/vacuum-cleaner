@@ -1,7 +1,6 @@
 # 대표적 OSS 소개 - 장주연
 
-오픈소스 소프트웨어(Open Source Software, OSS)는 소스 코드가 공개되어 누구나 열람·수정·재배포할 수 있도록 허용되는 소프트웨어를 의미한다.  
-이는 단순히 무료 사용 여부를 넘어, 라이선스 조건에 따라 사용·연구·수정·배포의 자유를 부여하는 개발·배포 방식이다.
+오픈소스 소프트웨어(Open Source Software, OSS)는 소스 코드가 공개되어 누구나 열람·수정·재배포할 수 있도록 허용되는 소프트웨어를 의미한다. 이는 단순히 무료 사용 여부를 넘어, 라이선스 조건에 따라 사용·연구·수정·배포의 자유를 부여하는 개발·배포 방식이다.
 
 본 문서는 여러 분야에서 널리 사용되는 대표적인 OSS 프로젝트를 선정하여,  
 각 프로젝트의 역할과 함께 사용 허용 범위, 재배포 조건 등 라이선스 특성을 정리한다.
@@ -22,23 +21,23 @@
 
 ## 1. 분야별 대표 OSS 요약 표
 
-| 분야                 | 프로젝트              | 주요 역할/특징                                             | 대표 사용 목적                              | 라이선스 요약                                      |
-|----------------------|-----------------------|-------------------------------------------------------------|---------------------------------------------|----------------------------------------------------|
-| 운영체제 / 플랫폼    | Linux 커널            | 리눅스 계열 OS의 핵심 커널                                 | 범용 OS 커널, 임베디드·서버 기반           | GPLv2-only                                        |
-| 운영체제 / 플랫폼    | Android (AOSP)        | 안드로이드 플랫폼의 공개 소스 코드 베이스                  | 모바일 OS 플랫폼 개발                       | Apache 2.0 (주요 구성요소)                        |
-| 운영체제 / 플랫폼    | FreeBSD               | BSD 계열 유닉스 운영체제                                   | 서버, 네트워크·스토리지용 OS               | BSD 2-Clause (FreeBSD License)                    |
-| 데이터베이스         | PostgreSQL            | 범용 관계형 데이터베이스 관리 시스템(RDBMS)                | 일반 업무용·서비스용 DB                     | PostgreSQL License (BSD 계열, 관대함)             |
-| 데이터베이스         | MySQL Community       | 대표적인 오픈소스 RDBMS                                    | 웹 서비스용 DB                              | GPLv2 (커뮤니티 버전)                             |
-| 데이터베이스         | MongoDB Community     | 도큐먼트 지향 NoSQL 데이터베이스                           | 문서·이벤트 데이터 저장                     | SSPL-1.0 (강한 copyleft, OSI 비승인)              |
-| 웹 서버 / 런타임     | Apache HTTP Server    | 모듈형 HTTP 웹 서버                                        | 웹 서버, 리버스 프록시                      | Apache License 2.0                                |
-| 웹 서버 / 런타임     | Nginx                 | 이벤트 기반 경량 웹 서버 및 리버스 프록시                  | 정적 서빙, 프록시, 로드 밸런서             | BSD 2-Clause                                      |
-| 웹 서버 / 런타임     | Node.js               | 서버 측 JavaScript 실행 환경                               | API 서버, 백엔드 런타임                    | MIT License                                       |
-| 개발 언어 / 런타임   | Python                | 범용 고수준 프로그래밍 언어                                | 스크립트, 데이터·웹 애플리케이션           | PSF License (BSD 스타일, GPL 호환)               |
-| 개발 언어 / 런타임   | Rust                  | 메모리 안전성을 목표로 한 시스템 프로그래밍 언어           | 시스템 도구, 저수준 라이브러리              | 듀얼 라이선스: Apache 2.0 / MIT                   |
-| 개발 언어 / 런타임   | OpenJDK (Java)        | Java 언어와 JVM의 참조 구현                                | Java 기반 애플리케이션 실행 환경           | GPLv2 + Classpath Exception                       |
-| 개발 도구 / 협업 도구 | Git                  | 분산 버전 관리 도구                                        | 소스 코드 변경 이력 관리                    | GPLv2-only                                        |
-| 개발 도구 / 협업 도구 | Docker Engine (Moby) | 컨테이너 실행 엔진                                         | 컨테이너 기반 애플리케이션 실행            | Apache License 2.0                                |
-| 개발 도구 / 협업 도구 | VS Code (Code - OSS) | 확장 가능한 소스 코드 에디터                               | 일반 개발용 에디터                          | MIT License (소스, Code - OSS)                   |
+| 분야 | 프로젝트 | 간단한 설명 | 라이선스 |
+|------|----------|--------------|----------|
+| 운영체제 / 플랫폼 | Linux 커널 | 리눅스 계열 운영체제의 핵심 커널로 프로세스, 메모리, 파일 시스템, 네트워크 기능을 담당 | GPLv2-only |
+|  | Android (AOSP) | 안드로이드 운영체제를 구성하는 공개 소스 코드 기반 | Apache 2.0 |
+|  | FreeBSD | BSD 계열 유닉스 운영체제로 서버·네트워크용 OS로 사용 | BSD 2-Clause |
+| 데이터베이스 | PostgreSQL | 표준 SQL을 지원하는 범용 관계형 데이터베이스 관리 시스템 | PostgreSQL License |
+|  | MySQL Community | SQL 기반 오픈소스 관계형 데이터베이스 | GPLv2 |
+|  | MongoDB Community | JSON/BSON 기반의 도큐먼트 지향 NoSQL 데이터베이스 | SSPL-1.0 |
+| 웹 서버 / 런타임 | Apache HTTP Server | 모듈형 구조의 HTTP 웹 서버 소프트웨어 | Apache License 2.0 |
+|  | Nginx | 이벤트 기반 웹 서버 및 리버스 프록시 서버 | BSD 2-Clause |
+|  | Node.js | JavaScript를 서버 측에서 실행하는 런타임 환경 | MIT License |
+| 개발 언어 / 런타임 | Python | 범용 고수준 인터프리터 프로그래밍 언어 | PSF License |
+|  | Rust | 메모리 안전성을 중시하는 시스템 프로그래밍 언어 | Apache 2.0 / MIT |
+|  | OpenJDK (Java) | Java 언어와 JVM의 오픈소스 참조 구현 | GPLv2 + Classpath Exception |
+| 개발 도구 / 협업 | Git | 분산 버전 관리 시스템 | GPLv2-only |
+|  | Docker Engine (Moby) | 컨테이너 기반 애플리케이션 실행 엔진 | Apache License 2.0 |
+|  | VS Code (Code - OSS) | 확장 가능한 오픈소스 코드 에디터 | MIT License |
 
 ---
 
