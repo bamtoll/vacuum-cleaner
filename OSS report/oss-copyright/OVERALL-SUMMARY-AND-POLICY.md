@@ -42,3 +42,28 @@
 3.  **승인 및 기록(Approval & Record):** 책임자 승인 후 `MANIFEST.json`에 등록하고 소스 코드에 반영.
 
 > **Note:** 본 보고서의 **Section 2**에 나열된 모든 OSS는 위 정책에 따라 **'Green' 등급**으로 판별되었거나, 적법한 절차를 거쳐 승인된 소프트웨어임을 확인합니다.
+
+## 1.4 Scope of Verification (검증 범위)
+
+본 보고서의 저작권 및 라이선스 검증은 프로젝트 `vacuum-cleaner`의 다음 영역을 포괄합니다.
+
+1.  **직접 의존성 (Direct Dependencies):** `package.json` (또는 `pom.xml`, `requirements.txt`)에 명시된 모든 최상위 라이브러리.
+2.  **간접 의존성 (Transitive Dependencies):** 직접 의존성 라이브러리가 내부적으로 사용하는 하위 라이브러리까지 추적하여 검토.
+3.  **배포 포함 여부:** 개발용 도구(DevDependencies)를 제외하고, 실제 최종 사용자에게 배포되는 **런타임(Runtime) 환경** 포함 코드에 집중하여 법적 리스크를 분석함.
+
+## 1.5 Verification Methodology (검증 방법론)
+
+정확한 라이선스 식별과 저작권자 확인을 위해 다음과 같은 **이중 교차 검증(Double-Check)** 방식을 채택하였습니다.
+
+* **1단계: 자동화 스캔 (Automated Scanning)**
+    * 패키지 매니저의 메타데이터 및 라이선스 스캔 도구를 활용하여 1차 라이선스 식별.
+* **2단계: 수동 검증 (Manual Verification)**
+    * **소스 코드 헤더 확인:** 각 라이브러리의 소스 코드 파일 상단에 명시된 `Copyright` 헤더를 직접 확인하여 정확한 저작권자 정보 추출.
+    * **LICENSE 파일 대조:** 소스 코드 저장소(Repository)에 포함된 `LICENSE` 파일 원본과 `NOTICE` 파일의 내용을 대조하여 특이사항(수정 여부 등) 점검.
+
+## 1.6 License Compatibility Check (라이선스 호환성 검토)
+
+본 프로젝트는 메인 라이선스로 배포되는 코드와 외부 OSS 간의 **법적 양립 가능성(Compatibility)**을 검토하였습니다.
+
+* **검토 결과:** 사용된 모든 OSS(MIT, Apache-2.0 등)는 상호 호환되며, 프로젝트 전체 라이선스 정책과 충돌하지 않음을 확인하였습니다.
+* **결합 방식:** 라이브러리별 요구 사항에 따라 정적 링크(Static Linking) 또는 동적 링크(Dynamic Linking) 방식을 적절히 구분하여 적용하였습니다.
